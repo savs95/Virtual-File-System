@@ -1,0 +1,42 @@
+create vfstesteval testeval.vfs
+open vfstesteval testeval.vfs
+makedir /
+list /
+makedir /testeval1
+list /
+list /testeval1
+makedir /testeval2
+list /
+list /testeval2
+makedir /testeval1/testeval1.1
+makedir /testeval1/testeval1.2
+list /
+list /testeval1
+makedir /testeval2/testeval2.1
+makedir /testeval2/testeval2.2
+makedir /testeval2/testeval2.3
+list /
+list /testeval1
+list /testeval2
+close
+open vfstesteval testeval.vfs
+list /
+list /testeval1
+list /testeval2
+close
+open vfstesteval testeval.vfs
+copyin /usr/include/string.h /testeval1/testeval1.2/string.h
+list /testeval1/testeval1.2
+close
+open vfstesteval testeval.vfs
+copyin /usr/bin/zip /testeval1/testeval1.2/zip
+list /testeval1/testeval1.2
+copyin /usr/include/string.h /testeval2/string.h
+copyin /usr/bin/zip /testeval2/zip
+close
+open vfstesteval testeval.vfs
+list /testeval2
+copyout /testeval1/testeval1.2/string.h external-string-copy.h
+copyout /testeval2/zip external-zip-copy
+close
+

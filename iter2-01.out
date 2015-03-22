@@ -1,0 +1,152 @@
+create vfstesteval testeval.vfs
+VfsCreateCommand executed
+==========================
+open vfstesteval testeval.vfs
+VfsOpenCommand executed
+==========================
+makedir / 
+VfsMakeDirCommand executed
+==========================
+list / 
+VfsListCommand executed
+==========================
+makedir /testeval1 
+VfsMakeDirCommand executed
+==========================
+list / 
+/testeval1/
+VfsListCommand executed
+==========================
+list /testeval1 
+VfsListCommand executed
+==========================
+makedir /testeval2 
+VfsMakeDirCommand executed
+==========================
+list / 
+/testeval1/
+/testeval2/
+VfsListCommand executed
+==========================
+list /testeval2 
+VfsListCommand executed
+==========================
+makedir /testeval1/testeval1.1 
+VfsMakeDirCommand executed
+==========================
+makedir /testeval1/testeval1.2 
+VfsMakeDirCommand executed
+==========================
+list / 
+/testeval1/
+/testeval2/
+VfsListCommand executed
+==========================
+list /testeval1 
+/testeval1/testeval1.1/
+/testeval1/testeval1.2/
+VfsListCommand executed
+==========================
+makedir /testeval2/testeval2.1 
+VfsMakeDirCommand executed
+==========================
+makedir /testeval2/testeval2.2 
+VfsMakeDirCommand executed
+==========================
+makedir /testeval2/testeval2.3 
+VfsMakeDirCommand executed
+==========================
+list / 
+/testeval1/
+/testeval2/
+VfsListCommand executed
+==========================
+list /testeval1 
+/testeval1/testeval1.1/
+/testeval1/testeval1.2/
+VfsListCommand executed
+==========================
+list /testeval2 
+/testeval2/testeval2.1/
+/testeval2/testeval2.2/
+/testeval2/testeval2.3/
+VfsListCommand executed
+==========================
+close  
+VfsCloseCommand executed
+==========================
+open vfstesteval testeval.vfs
+VfsOpenCommand executed
+==========================
+list / 
+/testeval1/
+/testeval2/
+VfsListCommand executed
+==========================
+list /testeval1 
+/testeval1/testeval1.1/
+/testeval1/testeval1.2/
+VfsListCommand executed
+==========================
+list /testeval2 
+/testeval2/testeval2.1/
+/testeval2/testeval2.2/
+/testeval2/testeval2.3/
+VfsListCommand executed
+==========================
+close  
+VfsCloseCommand executed
+==========================
+open vfstesteval testeval.vfs
+VfsOpenCommand executed
+==========================
+copyin /usr/include/string.h /testeval1/testeval1.2/string.h
+VfsCopyInCommand executed
+==========================
+list /testeval1/testeval1.2 
+/testeval1/testeval1.2/string.h
+VfsListCommand executed
+==========================
+close  
+VfsCloseCommand executed
+==========================
+open vfstesteval testeval.vfs
+VfsOpenCommand executed
+==========================
+copyin /usr/bin/zip /testeval1/testeval1.2/zip
+VfsCopyInCommand executed
+==========================
+list /testeval1/testeval1.2 
+/testeval1/testeval1.2/string.h
+/testeval1/testeval1.2/zip
+VfsListCommand executed
+==========================
+copyin /usr/include/string.h /testeval2/string.h
+VfsCopyInCommand executed
+==========================
+copyin /usr/bin/zip /testeval2/zip
+VfsCopyInCommand executed
+==========================
+close  
+VfsCloseCommand executed
+==========================
+open vfstesteval testeval.vfs
+VfsOpenCommand executed
+==========================
+list /testeval2 
+/testeval2/string.h
+/testeval2/zip
+/testeval2/testeval2.1/
+/testeval2/testeval2.2/
+/testeval2/testeval2.3/
+VfsListCommand executed
+==========================
+copyout /testeval1/testeval1.2/string.h external-string-copy.h
+VFS_COPYOUT: Unable to save file in host
+==========================
+copyout /testeval2/zip external-zip-copy
+VFS_COPYOUT: Unable to save file in host
+==========================
+close  
+VfsCloseCommand executed
+==========================
